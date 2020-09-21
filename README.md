@@ -1,2 +1,7 @@
 # FileFormats
-to check file format [now support image file formats: jpeg, png]
+
+This library implements:
+
+    A. Get file format from binary data, now support:
+        .jpeg
+        .png
