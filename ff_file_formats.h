@@ -31,9 +31,46 @@ SOFTWARE.
 
 typedef enum _FFType {
     FFTypeUnknown = 0,
+    
+    // DOCUMENT
+    FFTypePDF,
+    
+    // IMAGE 1
     FFTypeJPEG,
     FFTypePNG,
+    FFTypeWEBP,
+    FFTypeGIF,
+    FFTypeTIFF,
+    FFTypeBMP,
+    FFTypeICO,
+    FFTypeJ2K, // J2K, JPC, JPX
+    FFTypeJP2,
+    FFTypeEPS, // EPI, EPSF, EPSI
+    FFTypePSD,
+    FFTypePSB,
+    
+    // AUDIO
+    //FFTypeAAC,
+    //FFTypeMP3
+    //FFTypeWAV
+    //FFTypeFLAC
+    //FFTypeAPE
+    
+    FFTypeCount,
+    
+    // IMAGE 2
+    FFTypeSVG,
+    FFTypeDIB,
+    FFTypeTGA,
+    
+    FFTypeXCount,
 }FFType;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+FFType ff_get_type_from_file(const char* file_path_and_name);
 
 /*
  read 100 bytes from file with offset 0, as the params to invoke this function
@@ -41,5 +78,9 @@ typedef enum _FFType {
 FFType ff_get_type_from_data(unsigned char* binary_data, size_t data_len);
 
 const char* ff_get_ext_name_by_type(FFType type);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* ff_file_formats_h */
