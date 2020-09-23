@@ -34,6 +34,8 @@ typedef enum _FFType {
     
     // DOCUMENT
     FFTypePDF,
+    FFTypeDOC, // Microsoft Office document [before 2007]
+    FFTypeDOCX, // Microsoft Office document [after 2007]
     
     // IMAGE 1
     FFTypeJPEG,
@@ -49,12 +51,24 @@ typedef enum _FFType {
     FFTypePSD,
     FFTypePSB,
     
-    // AUDIO
-    //FFTypeAAC,
-    //FFTypeMP3
-    //FFTypeWAV
-    //FFTypeFLAC
-    //FFTypeAPE
+    // AUDIO & VIDEO 1
+    FFTypeM4A, // AAC [Apple Audio]
+    FFTypeM4B, // [Apple Audio Book]
+    FFTypeM4P, // [Apple AES Protected Audio]
+    FFTypeM4V, // [Apple Video] [Apple TV .M4V (M4VH)] [Apple iPhone .M4V (M4VP)]
+    FFTypeMOV, // [Apple QuickTime .MOV, .QT]
+    
+    FFTypeMP4,
+    FFTypeMP3,
+    FFTypeMP2,
+    
+    FFTypeWAV,
+    FFTypeAVI,
+    FFTypeAIFF,
+    FFTypeMID,
+    
+    FFTypeFLAC,
+    FFTypeAPE,
     
     FFTypeCount,
     
@@ -62,6 +76,11 @@ typedef enum _FFType {
     FFTypeSVG,
     FFTypeDIB,
     FFTypeTGA,
+    
+    // AUDIO & VIDEO 2
+    FFTypeWMA,
+    FFTypeWMV,
+    FFTypeASF,
     
     FFTypeXCount,
 }FFType;
