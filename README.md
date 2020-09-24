@@ -1,5 +1,7 @@
 # FileFormats
 
+Find out the file type by file data or name
+
 This library implements:
 
 1. Get filename extension from file path
@@ -7,63 +9,63 @@ This library implements:
 
     Now support:
     
-    PDF
-    ZIP
-    RAR
-    ISO
+    .PDF
+    .ZIP
+    .RAR
+    .ISO
     
-    JPEG
-    JPG
-    PNG
-    WEBP
-    GIF
-    TIFF
-    BMP
-    ICO
-    J2K
-    JP2
-    EPS
-    PSD
-    PSB
+    .JPEG
+    .JPG
+    .PNG
+    .WEBP
+    .GIF
+    .TIFF
+    .BMP
+    .ICO
+    .J2K
+    .JP2
+    .EPS
+    .PSD
+    .PSB
     
-    M4A
-    M4B
-    M4P
-    M4V
-    MOV
+    .M4A
+    .M4B
+    .M4P
+    .M4V
+    .MOV
     
-    MP4
-    MP3
-    MP2
+    .MP4
+    .MP3
+    .MP2
     
-    WAV
-    AVI
-    AIFF
-    MID
-    FLAC
-    APE
-    RM
-    RMVB
+    .WAV
+    .AVI
+    .AIFF
+    .MID
+    .FLAC
+    .APE
+    .RM
+    .RMVB
     
-    EXE
+    .EXE
 
-    TXT
-    HTML
+    .TXT
+    .HTML
     
-    DOC
-    DOCX
-    PPT
-    PPTX
-    XML
-    XMLX
+    .DOC
+    .DOCX
+    .PPT
+    .PPTX
+    .XML
+    .XMLX
     
-    SVG
-    DIB
-    TGA
+    .SVG
+    .DIB
+    .TGA
     
-    WMA
-    WMV
-    ASF
+    .WMA
+    .WMV
+    .ASF
         
     
 Reference:
