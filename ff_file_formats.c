@@ -199,29 +199,47 @@ const FFFeature g_ff_pdf[] = {
     {3, FF_NEED, 0x46},
 };
 
-const FFFeature g_ff_doc[] = {
-    {0, FF_NEED, 0xD0},
-    {1, FF_NEED, 0xCF},
-    {2, FF_NEED, 0x11},
-    {3, FF_NEED, 0xE0},
+const FFFeature g_ff_zip[] = {
+    {0, 0, 0x50},
+    {1, 0, 0x4B},
+    {2, 0, 0x03},
+    {3, 0, 0x04},
     
-    {4, FF_NEED, 0xA1},
-    {5, FF_NEED, 0xB1},
-    {6, FF_NEED, 0x1A},
-    {7, FF_NEED, 0xE1},
+    {0, 1, 0x50},
+    {1, 1, 0x4B},
+    {2, 1, 0x05},
+    {3, 1, 0x06},
+    
+    {0, 2, 0x50},
+    {1, 2, 0x4B},
+    {2, 2, 0x07},
+    {3, 2, 0x08},
+    
+    {30, 3, 0x50},
+    {31, 3, 0x4B},
+    {32, 3, 0x4C},
+    {33, 3, 0x49},
+    {34, 3, 0x54},
+    {35, 3, 0x45},
 };
 
-const FFFeature g_ff_docx[] = {
-    {4, FF_NEED, 0x14},
-    {5, FF_NEED, 0x00},
-    {6, 0, 0x06},
-    {6, 1, 0x00},
-    {7, FF_NEED, 0x00},
+const FFFeature g_ff_rar[] = {
+    {0, FF_NEED, 0x52},
+    {1, FF_NEED, 0x61},
+    {2, FF_NEED, 0x72},
+    {3, FF_NEED, 0x21},
     
-    {0, FF_NEED, 0x50},
-    {1, FF_NEED, 0x4B},
-    {2, FF_NEED, 0x03},
-    {3, FF_NEED, 0x04},
+    {4, FF_NEED, 0x1A},
+    {5, FF_NEED, 0x07},
+    {6, FF_NEED, 0x00},
+};
+
+const FFFeature g_ff_iso[] = {
+    {0, FF_NEED, 0x43},
+    {1, FF_NEED, 0x44},
+    {2, FF_NEED, 0x30},
+    {3, FF_NEED, 0x30},
+    {4, FF_NEED, 0x31},
 };
 
 //------------------------------------------------------------------------------------------------------
@@ -348,7 +366,7 @@ const FFFeature g_ff_psb[] = {
 };
 
 //------------------------------------------------------------------------------------------------------
-// AUDIO & VIDEO
+// AUDIO & VIDEO 1
 const FFFeature g_ff_m4a[] = {
     {10, FF_NEED, 0x41},
     
@@ -583,6 +601,47 @@ const FFFeature g_ff_ape[] = {
     {3, FF_NEED, 0x20},
 };
 
+const FFFeature g_ff_rm[] = {
+    {0, FF_NEED, 0x2E},
+    {1, FF_NEED, 0x52},
+    {2, FF_NEED, 0x4D},
+    {3, FF_NEED, 0x46},
+};
+
+//------------------------------------------------------------------------------------------------------
+// APPLICATION
+const FFFeature g_ff_exe[] = {
+    {0, FF_NEED, 0x4D},
+    {1, FF_NEED, 0x5A},
+};
+
+//------------------------------------------------------------------------------------------------------
+// DOCUMENT 2
+const FFFeature g_ff_ms_doc[] = {
+    {0, FF_NEED, 0xD0},
+    {1, FF_NEED, 0xCF},
+    {2, FF_NEED, 0x11},
+    {3, FF_NEED, 0xE0},
+    
+    {4, FF_NEED, 0xA1},
+    {5, FF_NEED, 0xB1},
+    {6, FF_NEED, 0x1A},
+    {7, FF_NEED, 0xE1},
+};
+
+const FFFeature g_ff_ms_docx[] = {
+    {4, FF_NEED, 0x14},
+    {5, FF_NEED, 0x00},
+    {6, 0, 0x06},
+    {6, 1, 0x00},
+    {7, FF_NEED, 0x00},
+    
+    {0, FF_NEED, 0x50},
+    {1, FF_NEED, 0x4B},
+    {2, FF_NEED, 0x03},
+    {3, FF_NEED, 0x04},
+};
+
 //------------------------------------------------------------------------------------------------------
 // IMAGE 2
 const FFFeature g_ff_svg[] = {
@@ -599,13 +658,17 @@ const FFFeature g_ff_svg[] = {
 const FFFormat g_ff_formats[FFTypeXCount] = {
     {"", 0, NULL}, // Unknown
     
-    // DOCUMENT
+    // BY FILE SIGNATURE
+    
+    // DOCUMENT 1
     {"PDF", sizeof(g_ff_pdf)/sizeof(FFFeature), g_ff_pdf},
-    {"DOC", sizeof(g_ff_doc)/sizeof(FFFeature), g_ff_doc},
-    {"DOCX", sizeof(g_ff_docx)/sizeof(FFFeature), g_ff_docx},
+    {"ZIP", sizeof(g_ff_zip)/sizeof(FFFeature), g_ff_zip},
+    {"RAR", sizeof(g_ff_rar)/sizeof(FFFeature), g_ff_rar},
+    {"ISO", sizeof(g_ff_iso)/sizeof(FFFeature), g_ff_iso},
     
     // IMAGE 1
     {"JPEG", sizeof(g_ff_jpeg)/sizeof(FFFeature), g_ff_jpeg},
+    {"JPG",  sizeof(g_ff_jpeg)/sizeof(FFFeature), g_ff_jpeg},
     {"PNG",  sizeof(g_ff_png)/sizeof(FFFeature), g_ff_png},
     {"WEBP", sizeof(g_ff_webp)/sizeof(FFFeature), g_ff_webp},
     {"GIF",  sizeof(g_ff_gif)/sizeof(FFFeature), g_ff_gif},
@@ -618,7 +681,7 @@ const FFFormat g_ff_formats[FFTypeXCount] = {
     {"PSD",  sizeof(g_ff_psd)/sizeof(FFFeature), g_ff_psd},
     {"PSB",  sizeof(g_ff_psb)/sizeof(FFFeature), g_ff_psb},
     
-    // AUDIO
+    // AUDIO & VIDEO 1
     {"M4A",  sizeof(g_ff_m4a)/sizeof(FFFeature), g_ff_m4a},
     {"M4B",  sizeof(g_ff_m4b)/sizeof(FFFeature), g_ff_m4b},
     {"M4P",  sizeof(g_ff_m4p)/sizeof(FFFeature), g_ff_m4p},
@@ -635,8 +698,26 @@ const FFFormat g_ff_formats[FFTypeXCount] = {
     {"MID",  sizeof(g_ff_mid)/sizeof(FFFeature), g_ff_mid},
     {"FLAC",  sizeof(g_ff_flac)/sizeof(FFFeature), g_ff_flac},
     {"APE",  sizeof(g_ff_ape)/sizeof(FFFeature), g_ff_ape},
+    {"RM",  sizeof(g_ff_rm)/sizeof(FFFeature), g_ff_rm},
+    {"RMVB",  sizeof(g_ff_rm)/sizeof(FFFeature), g_ff_rm},
+    
+    // APPLICATION
+    {"EXE",  sizeof(g_ff_exe)/sizeof(FFFeature), g_ff_exe},
     
     {"", 0,  NULL}, // padding
+    
+    // BY EXT NAME
+    
+    // DOCUMENT 2
+    {"TXT",  0, NULL},
+    {"HTML", 0, NULL},
+    
+    {"DOC",  sizeof(g_ff_ms_doc)/sizeof(FFFeature), g_ff_ms_doc},
+    {"DOCX", sizeof(g_ff_ms_docx)/sizeof(FFFeature), g_ff_ms_docx},
+    {"PPT",  sizeof(g_ff_ms_doc)/sizeof(FFFeature), g_ff_ms_doc},
+    {"PPTX", sizeof(g_ff_ms_docx)/sizeof(FFFeature), g_ff_ms_docx},
+    {"XML",  sizeof(g_ff_ms_doc)/sizeof(FFFeature), g_ff_ms_doc},
+    {"XMLX", sizeof(g_ff_ms_docx)/sizeof(FFFeature), g_ff_ms_docx},
     
     // IMAGE 2
     {"SVG",  sizeof(g_ff_svg)/sizeof(FFFeature), g_ff_svg},
@@ -644,7 +725,6 @@ const FFFormat g_ff_formats[FFTypeXCount] = {
     {"TGA",  0, NULL},
     
     // AUDIO & VIDEO 2
-    
     {"WMA",  sizeof(g_ff_asf)/sizeof(FFFeature), g_ff_asf},
     {"WMV",  sizeof(g_ff_asf)/sizeof(FFFeature), g_ff_asf},
     {"ASF",  sizeof(g_ff_asf)/sizeof(FFFeature), g_ff_asf},

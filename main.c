@@ -5,7 +5,7 @@
 int main(int argc, const char* argv[]) {
     if (argc < 2 ) {
 #ifdef DEBUG
-        const char file_name[] = "/Users/henry/Downloads/1.docx";
+        const char file_name[] = "/Users/henry/Downloads/1.rm";
         
         FFType type = ff_get_type_from_file(file_name);
         if (type == FFTypeUnknown) {

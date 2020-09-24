@@ -32,13 +32,15 @@ SOFTWARE.
 typedef enum _FFType {
     FFTypeUnknown = 0,
     
-    // DOCUMENT
+    // DOCUMENT 1
     FFTypePDF,
-    FFTypeDOC, // Microsoft Office document [before 2007]
-    FFTypeDOCX, // Microsoft Office document [after 2007]
+    FFTypeZIP,
+    FFTypeRAR,
+    FFTypeISO,
     
     // IMAGE 1
     FFTypeJPEG,
+    FFTypeJPG,
     FFTypePNG,
     FFTypeWEBP,
     FFTypeGIF,
@@ -70,7 +72,24 @@ typedef enum _FFType {
     FFTypeFLAC,
     FFTypeAPE,
     
+    FFTypeRM,
+    FFTypeRMVB,
+    
+    // APPLICATION
+    FFTypeEXE,
+    
     FFTypeCount,
+    
+    // DOCUMENT 2
+    FFTypeTXT,
+    FFTypeHTML,
+    
+    FFTypeDOC, // Microsoft Office document [before 2007]
+    FFTypeDOCX, // Microsoft Office document [after 2007]
+    FFTypePPT,
+    FFTypePPTX,
+    FFTypeXML,
+    FFTypeXMLX,
     
     // IMAGE 2
     FFTypeSVG,
