@@ -1,4 +1,4 @@
-# FileFormats
+# File Type | Signature | Magic Number
 
 Find out the file type by file data or name
 
